@@ -1,8 +1,8 @@
 package Homework.Module8.page;
 
-
-import Homework.Module8.patterns.decorator.CustomDriverDecorator;
-import org.openqa.selenium.By;
+import Homework.Module8.patterns.factorymethod.Driver;
+import Homework.Module8.patterns.singleton.WebDriverSingleton;
+import Homework.Module8.util.Utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,13 +24,13 @@ public class ApiDocsMainPage extends ApiDocsAbstractPage {
     }
 
     public boolean isSearchItemDisplayed() {
-        new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOf(apiLink));
+        new WebDriverWait(WebDriverSingleton.getWebDriverInstance(), 50).until(ExpectedConditions.visibilityOf(apiLink));
         return apiLink.isDisplayed();
     }
 
     public void DocsRequest(String apiName){
 
-        highlightElement(apiList);
+        Utils.highlightElement(apiList);
         this.apiList.click();
     }
 }

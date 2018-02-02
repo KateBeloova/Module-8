@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.Select;
 
 public class ApiDocsLoginPage extends ApiDocsAbstractPage {
 
+    private WebDriver driver;
+
     @FindBy(name = "IDToken1")
     private WebElement login;
 

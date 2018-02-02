@@ -1,5 +1,7 @@
 package Homework.Module8.page;
 
+import Homework.Module8.patterns.factorymethod.Driver;
+import Homework.Module8.patterns.singleton.WebDriverSingleton;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,8 +20,8 @@ public class RequestDocsPage extends ApiDocsAbstractPage {
     }
 
     public boolean isButtonDisplayed() {
-        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(TRYITBTN)));
-        btn = driver.findElement(By.xpath(TRYITBTN));
+        new WebDriverWait(WebDriverSingleton.getWebDriverInstance(), 5).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(TRYITBTN)));
+        btn = WebDriverSingleton.getWebDriverInstance().findElement(By.xpath(TRYITBTN));
         return btn.isDisplayed();
     }
 
