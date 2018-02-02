@@ -1,7 +1,7 @@
 package Homework.Module8;
 
 import Homework.Module8.business_objects.User;
-import Homework.Module8.core.Driver;
+import Homework.Module8.patterns.singleton.WebDriverSingleton;
 import Homework.Module8.service.Servise;
 import Homework.Module8.util.Utils;
 import Homework.pagefactory.ApiDocsMainPage;
@@ -38,17 +38,17 @@ public class ApiDocsTest {
     @BeforeClass(description = "Start browser")
     public void startBrowser() throws Exception  {
 
-            Driver.getWebDriverInstance().get(APIDOCS_URL);
+        WebDriverSingleton.getWebDriverInstance().navigate().to(APIDOCS_URL);
     }
 
     @Test(description = "Start browser", priority = 1)
     public void LogintoApiDocs() throws Exception{
 
-        user = new User();
-        user.setLogin("emqa16@thomsonreuters.com");
-        user.setPassword("Secret123");
+        user = new User("emqa16@thomsonreuters.com", "Secret123");
+        //user.setLogin("emqa16@thomsonreuters.com");
+        //user.setPassword("Secret123");
 
-        Assert.assertTrue(servise.loginToMail(user));
+       Assert.assertTrue(servise.loginToMail(user));
     }
 
     @Test(description = "Sent request to Docs API", priority = 2)

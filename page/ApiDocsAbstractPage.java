@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public abstract class ApiDocsAbstractPage {
 
-    protected WebDriver driver;
+    public WebDriver driver;
 
     public ApiDocsAbstractPage(WebDriver driver) {
         this.driver = driver;
