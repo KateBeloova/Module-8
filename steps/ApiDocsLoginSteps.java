@@ -15,7 +15,7 @@ public class ApiDocsLoginSteps {
     private static WebDriver driver = WebDriverSingleton.getWebDriverInstance();
     private static final String START_URL = "https://amers1.apps.cp.reutest.com/Apps/APIDocs/1.726.1/#/";
 
-    @Given("^user navigates to ApiDocs home page$")
+    @Given("^user navigates to ApiDocs main page$")
     public void apiDocsLoginPage() {
         driver.get(START_URL);
     }

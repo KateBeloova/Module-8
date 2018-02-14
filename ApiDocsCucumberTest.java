@@ -10,8 +10,8 @@ import org.testng.annotations.BeforeClass;
 import java.util.concurrent.TimeUnit;
 
 @CucumberOptions(strict = true, plugin = { "json:target/cucumber-report.json",
-        "html:target/cucumber-report" }, tags = "@smokeTest", features = "src/test/resources/cucumber_features/github_basic.feature", glue = {
-        "com.epam.byta.frameworks.demo.steps" })
+        "html:target/cucumber-report" }, tags = "@smokeTest", features = "src/test/resources/cucumber_features/apidocs_basic.feature", glue = {
+        "Homework.Module8.steps" })
 
 public class ApiDocsCucumberTest extends AbstractTestNGCucumberTests {
     private static WebDriver driver = WebDriverSingleton.getWebDriverInstance();
