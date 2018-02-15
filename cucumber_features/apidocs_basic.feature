@@ -4,14 +4,14 @@ Feature: ApiDocs basic test
 Given user navigates to ApiDocs main page
 
 @smokeTest
-Scenario: ApiDocs login
-Given user navigates to ApiDocs main page
-When  enter Username as "<username>" and Password as "<password>"
+Scenario Outline: user login into ApiDocs
+Given ApiDocs main page is opened
+When  user login into system as <type>
 Then  ApiDocs main page is displayed
 
-Examples: Different users
-| username | password|
-| edsdeveloper6@tr.com | Secret12 |
-| edsdeveloper7@tr.com| Secret12 |
-| edsdeveloper9@tr.com| Secret12 |
+Examples: Types of users
+| type |
+| admin |
+| superadmin|
+
 
